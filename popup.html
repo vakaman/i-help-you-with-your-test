@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Gen Autofill</title>
+  <link rel="stylesheet" href="styles/popup.css" />
+</head>
+
+<body>
+  <div class="header">
+        <img src="icons/icon128.png" alt="Data Gen Icon" width="32" height="32" />
+    <h1>Data Gen</h1>
+  </div>
+
+  <div class="form-group">
+    <label for="dataType">Tipo de dado</label>
+    <select id="dataType">
+      <option value="fullName">Nome Completo</option>
+      <option value="cpf">CPF (Válido)</option>
+      <option value="cnpj">CNPJ (Válido)</option>
+      <option value="tel">Telefone</option>
+      <option value="email">Email</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="generatedValue">Valor gerado</label>
+    <div class="result-container">
+      <input id="generatedValue" type="text" readonly placeholder="Clique em 'Gerar'..." />
+    </div>
+  </div>
+
+  <div class="settings-group">
+    <label>Configurações Adicionais</label>
+    <div class="setting-item">
+      <div class="checkbox-container">
+        <input type="checkbox" id="formatted" checked />
+        <label for="formatted">Usar máscara (CPF/CNPJ)</label>
+      </div>
+    </div>
+    
+    <label>Configurações de E-mail</label>
+    <div class="setting-item">
+      <input type="text" id="baseEmail" placeholder="seuemail@gmail.com" />
+      <div class="checkbox-container">
+        <input type="checkbox" id="useAlias" />
+        <label for="useAlias">Usar email para gerar alias</label>
+      </div>
+    </div>
+  </div>
+
+  <button id="generateButton">Gerar Novo Dado</button>
+
+  <div class="actions">
+    <button id="copyButton" title="Copiar para clipboard">Copiar</button>
+    <button id="fillFocusedButton" title="Preencher o campo que está com foco na página">Preencher</button>
+  </div>
+
+  <div id="status">Copiado!</div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>
