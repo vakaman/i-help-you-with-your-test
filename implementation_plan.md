@@ -18,13 +18,13 @@ Criar uma biblioteca robusta para geração de dados com suporte a variações:
 - **Telefone**: Formatos válidos, curtos demais, longos demais, todos zeros.
 - **Opções de Geração**: Permitir passar flags (ex: `{ type: 'cpf', valid: false }`).
 
-### 2. UI Contextual no Input ([content.js](file:///home/maicolkaiser/maicol/i-help-you-with-your-test/content.js) + `styles/content.css`)
+### 2. UI Contextual no Input ([content.js](content.js) + `styles/content.css`)
 Implementar o popup que aparece quando um input dá "match" com o tipo:
 - **Detecção**: Ao focar (focus) em um `<input>`, verificar `name`, `id`, `placeholder` ou `label` associado para inferir o tipo (ex: "cpf", "name", "tel").
 - **Bubble UI**: Mostrar um pequeno ícone ou botão flutuante perto do input.
 - **Ação**: Ao clicar, abrir menu rápido para gerar e preencher o valor escolhido.
 
-### 3. Melhoria no Popup Principal ([popup.html](file:///home/maicolkaiser/maicol/i-help-you-with-your-test/popup.html) + [popup.js](file:///home/maicolkaiser/maicol/i-help-you-with-your-test/popup.js))
+### 3. Melhoria no Popup Principal ([popup.html](popup.html) + [popup.js](popup.js))
 Refinar o menu acessível pelo ícone no topo direito:
 - **Menu Centralizado**: Seção "Generate Data" com dropdown ou cards para escolha.
 - **Gerar/Copiar**: Botão para gerar sem preencher (apenas copiar para clipboard).
@@ -34,9 +34,9 @@ Refinar o menu acessível pelo ícone no topo direito:
 Configurar o menu de clique direito:
 - **API `chrome.contextMenus`**: Registrar o menu geral "Generate Data" que aparece no body/background da página.
 - **Submenus**: Organizar por tipo (Nome, CPF, CNPJ, Tel).
-- **Comunicação**: O background script gera o dado e envia uma mensagem para o [content.js](file:///home/maicolkaiser/maicol/i-help-you-with-your-test/content.js) preencher o elemento clicado (ou focado).
+- **Comunicação**: O background script gera o dado e envia uma mensagem para o [content.js](content.js) preencher o elemento clicado (ou focado).
 
-### 5. Configuração e Permissões ([manifest.json](file:///home/maicolkaiser/maicol/i-help-you-with-your-test/manifest.json))
+### 5. Configuração e Permissões ([manifest.json](manifest.json))
 - Adicionar permissão `"contextMenus"`.
 - Adicionar script de background (service worker).
 - Adicionar estilos e scripts injetados.
